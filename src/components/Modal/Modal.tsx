@@ -1,26 +1,12 @@
-import React, { useState, FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 import ModalContainer from './useModalContainer';
+import useToggle from './useToggle';
 
 const ModalBase: FunctionComponent<{}> = () => {
-  const [show, setShow] = useState<boolean[]>([]);
   const { modals } = ModalContainer.useContainer();
-
-  useEffect(() => {
-    if (modals.length) {
-      setShow(show.concat(true));
-    } else {
-      setShow([]);
-    }
-  }, [modals.length]);
-
-  const onHide = (index: number) => () => {
-    const draft = [...show];
-    draft[index] = false;
-
-    setShow(draft);
-  };
+  const { show, onHide } = useToggle();
 
   return (
     <>
