@@ -1,3 +1,7 @@
+## Project description
+
+Modal with React Hooks: Write less do more - A simple but powerful pattern for implementing Modal in React applications using Hooks.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
